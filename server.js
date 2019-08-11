@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const Telegram = require('telegraf/telegram')
 const seedrandom = require('seedrandom')
