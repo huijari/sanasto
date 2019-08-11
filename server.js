@@ -33,6 +33,22 @@ app.post(`/${token}`, (request, response) => {
       case '/english':
         send(message.chat.id, getWords('english'))
         break
+      case '/es':
+      case '/spanish':
+        send(message.chat.id, getWords('spanish'))
+        break
+      case '/fi':
+      case '/finnish':
+        send(message.chat.id, getWords('finnish'))
+        break
+      case '/fr':
+      case '/french':
+        send(message.chat.id, getWords('french'))
+        break
+      case '/ru':
+      case '/russian':
+        send(message.chat.id, getWords('russian'))
+        break
       default:
         send(message.chat.id, 'unknown command')
     }
