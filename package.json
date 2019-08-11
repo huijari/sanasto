@@ -1,6 +1,6 @@
 {
-  "name": "huijari-sanasto",
-  "version": "0.0.1",
+  "name": "sanasto",
+  "version": "1.0.0",
   "description": "telegram bot that serves random words every day",
   "main": "server.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/huijari-sanasto"
+    "url": "https://github.com/huijari/sanasto"
   },
   "license": "MIT",
   "keywords": [
