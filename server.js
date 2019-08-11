@@ -8,7 +8,10 @@ const english = require('./data/english.json')
 
 const token = process.env.SECRET
 const telegram = new Telegram(token)
-const send = (chat, message) => telegram.sendMessage(chat, message)
+const send = (chat, message) =>
+  process.env.DEBUG
+    ? console.log({ chat, message })
+    : telegram.sendMessage(chat, message)
 
 const rng = seedrandom(new Date().toDateString())
 const words = new Array(10)
