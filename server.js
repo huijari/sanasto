@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const Telegram = require('telegraf/telegram')
 const seedrandom = require('seedrandom')
+const mem = require('mem')
 const { readFileSync } = require('fs')
 
 const token = process.env.SECRET
@@ -12,7 +13,7 @@ const send = (chat, message) =>
     ? console.log({ chat, message })
     : telegram.sendMessage(chat, message)
 
-function getWords(language) {
+const getWords = mem(language => {
   const data = readFileSync(`./data/${language}.txt`, 'utf-8').split('\n')
   const rng = seedrandom(new Date().toDateString())
   const words = new Array(10)
@@ -21,7 +22,7 @@ function getWords(language) {
     .map(word => `- ${word}`)
     .join('\n')
   return words
-}
+})
 
 const app = express()
 app.use(express.json())
